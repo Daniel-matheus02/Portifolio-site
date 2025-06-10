@@ -174,28 +174,28 @@
     <script src="./src/js/index.js"></script>
     <!-- Script do tt-chat-n8n -->
     <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/chat.bundle.es.js';
-        createChat({
-            webhookUrl: 'https://sua-instancia-n8n/webhook/aura',
-            webhookConfig: { method: 'POST', headers: {} },
-            target: '#chat-aura',
-            mode: 'window',
-            chatInputKey: 'chatInput',
-            defaultLanguage: 'pt',
-            initialMessages: [
-                'Olá! Eu sou Aura, sua assistente de IA. Pergunte algo sobre o currículo ou projetos de Daniel Antonio Matheus!',
-            ],
-            i18n: {
-                pt: {
-                    title: 'Converse com Aura',
-                    subtitle: 'Pergunte sobre meu currículo!',
-                    footer: 'Desenvolvido com n8n por Daniel',
-                    getStarted: 'Iniciar Conversa',
-                    inputPlaceholder: 'Digite sua pergunta...',
-                },
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/chat.min.js';
+    createChat({
+        webhookUrl: 'https://daniel-matheus02.app.n8n.cloud/webhook/8c5818f2-18b0-4528-b864-c8fe07d1b14a',
+        webhookConfig: { method: 'POST', headers: {} },
+        target: '#chat-aura',
+        mode: 'window',
+        chatInputKey: 'chatInput',
+        defaultLanguage: 'pt',
+        initialMessages: [
+            'Olá! Eu sou Aura, sua assistente de IA. Pergunte algo sobre o currículo ou projetos de Daniel Antonio Matheus!',
+        ],
+        i18n: {
+            pt: {
+                title: 'Converse com Aura',
+                subtitle: 'Pergunte sobre meu currículo!',
+                footer: 'Desenvolvido com n8n por Daniel',
+                getStarted: 'Iniciar Conversa',
+                inputPlaceholder: 'Digite sua pergunta...',
             },
-        });
-    </script>
+        },
+    });
+</script>
 </body>
 
 </html>
