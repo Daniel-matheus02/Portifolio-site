@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/images/css/reset.css">
     <link rel="stylesheet" href="./src/images/css/estilos.css">
     <link rel="stylesheet" href="./src/images/css/responsivo.css">
-    <!-- Adicionando o CSS do tt-chat-n8n -->
-    <link href baldwin="true" href="https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/style.css" rel="stylesheet" />
+    <!-- CSS do @n8n/chat -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/style.css" rel="stylesheet" />
     <style>
-        /* Estilizando o chat para combinar com o site */
+        /* Estilizando o chat embutido */
         .chat {
             padding: 40px 20px;
             text-align: center;
@@ -33,29 +30,103 @@
             font-size: 1rem;
             margin-bottom: 20px;
         }
-        #chat-aura {
+        #n8n-chat {
             width: 100%;
             max-width: 400px;
-            height: 500px;
+            height: 600px;
             margin: 20px auto;
             border: 1px solid #ccc;
             border-radius: 8px;
             font-family: 'Poppins', sans-serif;
+            position: relative;
         }
         :root {
-            --chat-background: #f9f9f9;
-            --chat-text-color: #333;
-            --chat-primary-color: #007bff;
+            --chat--color-primary: #007bff; /* Azul do portfólio */
+            --chat--color-primary-shade-50: #0056b3;
+            --chat--color-primary-shade-100: #003087;
+            --chat--color-secondary: #20b69e; /* Verde geek */
+            --chat--color-secondary-shade-50: #1ca08a;
+            --chat--color-white: #ffffff;
+            --chat--color-light: #f9f9f9;
+            --chat--color-light-shade-50: #e6e9f1;
+            --chat--color-light-shade-100: #c2c5cc;
+            --chat--color-medium: #d2d4d9;
+            --chat--color-dark: #101330;
+            --chat--color-disabled: #777980;
+            --chat--color-typing: #404040;
+            --chat--spacing: 1rem;
+            --chat--border-radius: 8px;
+            --chat--transition-duration: 0.2s;
+            --chat--window--width: 400px;
+            --chat--window--height: 600px;
+            --chat--header--background: #101330;
+            --chat--header--color: #ffffff;
+            --chat--header--padding: 0.5rem;
+            --chat--heading--font-size: 1.8rem;
+            --chat--subtitle--font-size: 0.9rem;
+            --chat--subtitle--line-height: 1.5;
+            --chat--textarea--height: 50px; /* Garantir altura do input */
+            --chat--message--font-size: 0.875rem;
+            --chat--message--padding: 0.75rem;
+            --chat--message--border-radius: 6px;
+            --chat--message-line-height: 1.6;
+            --chat--message--bot--background: #f9f9f9;
+            --chat--message--bot--color: #101330;
+            --chat--message--user--background: #007bff;
+            --chat--message--user--color: #ffffff;
+            --chat--message--pre--background: #e6e9f1;
+            --chat--toggle--background: #007bff;
+            --chat--toggle--hover--background: #0056b3;
+            --chat--toggle--active--background: #003087;
+            --chat--toggle--color: #ffffff;
+            --chat--toggle--size: 50px;
+        }
+        /* Forçar visibilidade do input */
+        .n8n-chat__textarea {
+            display: block !important;
+            visibility: visible !important;
+            height: var(--chat--textarea--height) !important;
+            min-height: 50px !important;
+            opacity: 1 !important;
+            width: 100% !important;
+            padding: 0.5rem !important;
+            border: 1px solid var(--chat--color-medium) !important;
+            border-radius: var(--chat--border-radius) !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 0.875rem !important;
+            resize: none !important;
+            box-sizing: border-box !important;
+        }
+        .n8n-chat__textarea:focus {
+            outline: none !important;
+            border-color: var(--chat--color-primary) !important;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2) !important;
+        }
+        .n8n-chat__footer {
+            display: flex !important;
+            padding: var(--chat--spacing) !important;
+            background: var(--chat--color-white) !important;
+            border-top: 1px solid var(--chat--color-light-shade-100) !important;
+        }
+        .n8n-chat__textarea-container {
+            flex-grow: 1 !important;
+        }
+        /* Fallback para erro */
+        #n8n-chat:empty::before {
+            content: "Erro ao carregar o chat. Verifique o console do navegador.";
+            display: block;
+            padding: 20px;
+            color: red;
+            font-family: 'Poppins', sans-serif;
         }
         @media (max-width: 768px) {
-            #chat-aura {
+            #n8n-chat {
                 max-width: 100%;
-                height: 400px;
+                height: 500px;
             }
         }
     </style>
 </head>
-
 <body>
     <header class="cabecalho">
         <a href="#">
@@ -63,12 +134,7 @@
         </a>
         <nav class="menu">
             <ul>
-                <li>
-                    <a href="#projetos">Meus projetos</a>
-                </li>
-                <li>
-                    <a href="#chat">Converse com Aura</a>
-                </li>
+                <li><a href="#projetos">Meus projetos</a></li>
             </ul>
         </nav>
     </header>
@@ -76,21 +142,13 @@
         <div class="informacoes">
             <h1>Olá, me chamo Daniel Antonio Matheus</h1>
             <p>Graduando em Engenharia da Computação com experiência em redes (Syma Solutions) e desenvolvimento web (Golang/Vue.js).</p>
-            <p>Sou um programador apaixonado por tecnologia e cultura geek 💙, com facilidade em aprender novas linguagens.</p>
-            <p>Meu objetivo é me especializar em frontend e me tornar um desenvolvedor fullstack, com foco em carreira internacional. 😁</p>
+            <p>Sou um programador, e gosto de tecnologia desde criança, tenho muita facilidade em aprender novas linguagens e ferramentas.</p>
+            <p>Meu objetivo é me especializar mais em desenvolvimento e me tornar um bom desenvolvedor fullstack trabalhando remotamente.😁  </p>
             <ul class="redes-sociais">
-                <li>
-                    <a href="https://www.linkedin.com/in/daniel-a-matheus/" title="Ir para o Linkedin" target="_blank">
-                        <i class="fab fa-linkedin-in"></i></a>
-                </li>
-                <li><a href="https://wa.me/044991258735" title="Enviar mensagem no Whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </li>
-                <li><a href="https://github.com/Daniel-matheus02" title="Ir para o Github" target="_blank"><i
-                            class="fab fa-github"></i></a></li>
-                <li><a href="https://www.instagram.com/daniel.matheus02/?next=%2F" title="Ir para o Instagram"
-                        target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/daniel-a-matheus/" title="Ir para o Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://wa.me/044991258735" title="Enviar mensagem no Whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="https://github.com/Daniel-matheus02" title="Ir para o Github" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.instagram.com/daniel.matheus02/?next=%2F" title="Ir para o Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
         <div class="container-foto">
@@ -155,45 +213,43 @@
         </div>
         <button class="btn-mostrar-projetos">Mostrar mais</button>
     </section>
-
+    <!-- Chat embutido com Aura -->
     <script src="./src/js/index.js"></script>
-    <!-- Script do tt-chat-n8n -->
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/style.css" rel="stylesheet" />
-<section class="chat" id="chat">
-    <h3>Converse com Aura</h3>
-    <p>Faça perguntas sobre meu currículo e projetos!</p>
-    <div id="n8n-chat" style="width: 100%; max-width: 400px; height: 600px; margin: 20px auto; border: 1px solid #ccc; border-radius: 8px;"></div>
-</section>
-<script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/chat.bundle.es.js';
-    createChat({
-        webhookUrl: 'https://daniel-matheus02.app.n8n.cloud/webhook/834d1f70-07fd-47a4-a041-d9c7f9106f88/chat', // Substitua pela Production URL do n8n
-        webhookConfig: {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        },
-        target: '#n8n-chat',
-        mode: 'window',
-        chatInputKey: 'chatInput',
-        chatSessionKey: 'sessionId',
-        defaultLanguage: 'en', // 'pt' não é suportado, usaremos i18n para português
-        initialMessages: [
-            'Olá! Eu sou Aura, sua assistente de IA. Pode me perguntar sobre o currículo ou projetos do Daniel! 🚀',
-        ],
-        i18n: {
-            en: {
-                title: 'Converse com Aura',
-                subtitle: 'Pergunte sobre o currículo do Daniel!',
-                footer: 'Feito com n8n por Daniel Matheus',
-                getStarted: 'Iniciar Conversa',
-                inputPlaceholder: 'Digite sua pergunta...',
-            }
-        },
-        showWelcomeScreen: false
-    });
-</script>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/chat.bundle.es.js';
+        console.log('Inicializando n8n Chat...');
+        try {
+            createChat({
+                webhookUrl: 'https://daniel-matheus02.app.n8n.cloud/webhook/b3b15aaf-27cc-44c5-8291-58a6b95872e5/chat', // Substitua pela Production URL do Chat Trigger
+                webhookConfig: {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                },
+                target: '#n8n-chat',
+                mode: 'window',
+                chatInputKey: 'chatInput',
+                chatSessionKey: 'sessionId',
+                defaultLanguage: 'en',
+                initialMessages: [
+                    'Olá! Eu sou Aura, sua assistente de IA. Pergunte sobre o currículo ou projetos do Daniel! 🚀',
+                ],
+                i18n: {
+                    en: {
+                        title: 'Converse com Aura',
+                        subtitle: 'Pergunte sobre os projetos de Daniel!',
+                        footer: 'Feito com n8n por Daniel Matheus',
+                        getStarted: 'Iniciar Conversa',
+                        inputPlaceholder: 'Digite sua pergunta...',
+                    }
+                },
+                showWelcomeScreen: false
+            });
+            console.log('Chat inicializado com sucesso!');
+        } catch (error) {
+            console.error('Erro ao inicializar chat:', error);
+        }
+    </script>
 </body>
-
 </html>
