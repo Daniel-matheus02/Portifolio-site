@@ -1,0 +1,75 @@
+{
+  "nome": "Daniel Antonio Matheus",
+  "telefone": "+55 (44) 99125-8735",
+  "email": "danielantoniomatheus@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/daniel-a-matheus/",
+  "localizacao": "Maringá, Paraná, Brasil",
+  "resumo_profissional": "Graduando em Engenharia da Computação com experiência em redes (Syma Solutions) e desenvolvimento web (Golang/Vue.js). Foco em transição para carreira internacional em tecnologia.",
+  "experiencia": [
+    {
+      "empresa": "Syma Solutions",
+      "cargo": "Estagiário de TI (Redes)",
+      "atividades": [
+        "Suporte",
+        "Administração Linux",
+        "Resolução de problemas"
+      ]
+    },
+    {
+      "empresa": "Freelancer",
+      "cargo": "Desenvolvedor Web",
+      "atividades": [
+        "Projetos com Golang (backend)",
+        "Projetos com Vue.js (frontend)"
+      ]
+    }
+  ],
+  "habilidades": {
+    "linguagens": [
+      "Python",
+      "C++",
+      "Java",
+      "Golang",
+      "Vue.js",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "redes_so": [
+      "Linux",
+      "Configuração",
+      "Monitoramento",
+      "Docker"
+    ],
+    "metodologias": [
+      "Scrum",
+      "Kanban"
+    ]
+  },
+  "formacao": [
+    {
+      "instituicao": "FEITEP",
+      "curso": "Engenharia da Computação",
+      "conclusao": "2027 (em andamento)"
+    },
+    {
+      "instituicao": "Colégio Humberto de Campos",
+      "curso": "Ensino Médio",
+      "conclusao": "2019"
+    }
+  ],
+  "conquistas": [
+    "2º lugar no University Innovation Challenge (ACIM)",
+    "3º lugar no IDEATHON Ethics Challenge"
+  ],
+  "idiomas": [
+    {
+      "idioma": "Português",
+      "nivel": "Nativo"
+    },
+    {
+      "idioma": "Inglês",
+      "nivel": "Intermediário"
+    }
+  ]
+}

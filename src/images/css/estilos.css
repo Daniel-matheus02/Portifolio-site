@@ -4,10 +4,7 @@ html{
 }
 body{
    
-    font-family: 'Poppins', sans-serif;   /*
-    nessa parte do código eu realizo a mudança das fontes para a popins e corrijo a margem e o tamnho dos itens
-    é definida a imagem de background da 
-    */
+    font-family: 'Poppins', sans-serif; 
     margin: 0 auto;
     max-width: 1120px;
     background-image: linear-gradient(95deg, #020024 0%, #090979 35%, #00d4ff 100%);
@@ -19,8 +16,6 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px 15px;}
-
-
 .cabecalho .Logo{
 
 width: 65px;
@@ -188,7 +183,7 @@ transition: 0.2s;
 .projetos .btn-mostrar-projetos:hover{
     background: linear-gradient( to right,  #00d4ff 0%, darkviolet , #a70cd6 100%);
     transition: 0.3s; 
-}
+}  
 .projetos .btn-mostrar-projetos.remover {
 	display: none;
 }

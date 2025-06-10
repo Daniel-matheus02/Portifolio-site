@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Antonio Matheus - Desenvolvedor fullstack</title>
+    <title>Daniel Antonio Matheus - Desenvolvedor Fullstack</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,11 +12,48 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="./src/images/css/reset.css">
     <link rel="stylesheet" href="./src/images/css/estilos.css">
     <link rel="stylesheet" href="./src/images/css/responsivo.css">
-
+    <!-- Adicionando o CSS do tt-chat-n8n -->
+    <link href baldwin="true" href="https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/style.css" rel="stylesheet" />
+    <style>
+        /* Estilizando o chat para combinar com o site */
+        .chat {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .chat h3 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .chat p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        #chat-aura {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --chat-background: #f9f9f9;
+            --chat-text-color: #333;
+            --chat-primary-color: #007bff;
+        }
+        @media (max-width: 768px) {
+            #chat-aura {
+                max-width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,122 +66,136 @@
                 <li>
                     <a href="#projetos">Meus projetos</a>
                 </li>
+                <li>
+                    <a href="#chat">Converse com Aura</a>
+                </li>
             </ul>
         </nav>
     </header>
-        <section class="home">
-       
-            <div class="informacoes">
-                <h1 >Olá, me chamo Daniel Antonio Matheus</h1>
-                <p>Um desenvolvedor frontend em formação, desde os meus 17 anos estudo programação.</p>
-                <p>Sou um programador apaixonado por tecnologia e cultura geek 💙, gosto bastante de aprender
-                linguagens novas, e tenho muita facilidade nisso.</p>
-                <p>Meu objetivo é me especializar em frontend e depois me tornar um desenvolvedor fullstack. 😁  
-                </p>
-                
-                <ul class="redes-sociais">
-                    <li>
-                        <a href="https://www.linkedin.com/in/daniel-a-matheus/" title="Ir para o Linkedin" target="_blank">
-                            <i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li><a href="https://wa.me/044991258735" title="Enviar mensagem n o Whatsapp" target="_blank">
+    <section class="home">
+        <div class="informacoes">
+            <h1>Olá, me chamo Daniel Antonio Matheus</h1>
+            <p>Graduando em Engenharia da Computação com experiência em redes (Syma Solutions) e desenvolvimento web (Golang/Vue.js).</p>
+            <p>Sou um programador apaixonado por tecnologia e cultura geek 💙, com facilidade em aprender novas linguagens.</p>
+            <p>Meu objetivo é me especializar em frontend e me tornar um desenvolvedor fullstack, com foco em carreira internacional. 😁</p>
+            <ul class="redes-sociais">
+                <li>
+                    <a href="https://www.linkedin.com/in/daniel-a-matheus/" title="Ir para o Linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li><a href="https://wa.me/044991258735" title="Enviar mensagem no Whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </li>
-                    <li><a href="https://github.com/Daniel-matheus02" title="Ir para o Github" target="_blank"><i
-                            class="fab fa-github"></i> </a> </li>
-                    <li><a href="https://www.instagram.com/daniel.matheus02/?next=%2F" title="Ir para o Instagram"
-                        target="_blank"><i class="fab fa-instagram"></i></a> </li>
-              
-                    </ul>
-                              </div>
-                              <div class="container-foto">
-                                <div class="foto">
-                                    <img src="./src/images/perfil-removebg-preview.png" alt="Foto do Daniel">
-                                </div>
-                            </div>
+                    </a>
+                </li>
+                <li><a href="https://github.com/Daniel-matheus02" title="Ir para o Github" target="_blank"><i
+                            class="fab fa-github"></i></a></li>
+                <li><a href="https://www.instagram.com/daniel.matheus02/?next=%2F" title="Ir para o Instagram"
+                        target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="container-foto">
+            <div class="foto">
+                <img src="./src/images/perfil-removebg-preview.png" alt="Foto do Daniel">
+            </div>
+        </div>
     </section>
     <section class="projetos" id="projetos">
         <h3>Meus Projetos</h3>
         <div class="container-projetos">
             <div class="projeto ativo">
-                <a href="https://github.com/" alt="Projeto Hermes">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto Hermes">
                     <img src="./src/images/proj/IA pra previsão de ações.jpg" title="Previsão de ações com Python">
-            <h4>Projeto</h4>
+                    <h4>Previsão de Ações</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando python, e previsão de séries temporais.</p>
+                        <p>Projeto feito utilizando Python e previsão de séries temporais.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
             <div class="projeto ativo">
-                <a href="https://github.com/" alt="Projeto Guns">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto Guns">
                     <img src="./src/images/proj/arma 1.jpg">
-            <h4>Projeto</h4>
+                    <h4>Projeto Guns</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando css, javascript, e etc</p>
+                        <p>Projeto feito utilizando CSS, JavaScript e outras tecnologias.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
             <div class="projeto ativo">
-                <a href="https://github.com/" alt="Projeto Cyberpunk">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto Cyberpunk">
                     <img src="./src/images/proj/garotinha pra fazer um site encima por que eu gostei.jpg">
-            <h4>Projeto</h4>
+                    <h4>Projeto Cyberpunk</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando tais tecnologias</p>
+                        <p>Projeto feito utilizando HTML, CSS e JavaScript.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
             <div class="projeto ativo">
-                <a href="https://github.com/" alt="Projeto JDM">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto JDM">
                     <img src="./src/images/proj/r32 pra upar.jpg">
-            <h4>Projeto</h4>
+                    <h4>Projeto JDM</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando tais tecnologias</p>
+                        <p>Projeto feito utilizando HTML, CSS e JavaScript.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
             <div class="projeto">
-                <a href="https://github.com/" alt="Projeto GOW">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto GOW">
                     <img src="./src/images/proj/leviathan para o site gow.jpg">
-            <h4>Projeto</h4>
+                    <h4>Projeto GOW</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando tais tecnologias</p>
+                        <p>Projeto feito utilizando HTML, CSS e JavaScript.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
-
             <div class="projeto">
-                <a href="https://github.com/" alt="Projeto Arquearia">
+                <a href="https://github.com/Daniel-matheus02" alt="Projeto Arquearia">
                     <img src="./src/images/proj/Tipos de arcos.jpg">
-            <h4>Projeto</h4>
+                    <h4>Projeto Arquearia</h4>
                     <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando tais tecnologias</p>
+                        <p>Projeto feito utilizando HTML, CSS e JavaScript.</p>
                         <p>🔗 Ver no Github</p>
                     </div>
                 </a>
-
             </div>
-
         </div>
-        
         <button class="btn-mostrar-projetos">Mostrar mais</button>
     </section>
+    <!-- Seção do Chat -->
+    <section class="chat" id="chat">
+        <h3>Converse com Aura</h3>
+        <p>Faça perguntas sobre meu currículo e projetos!</p>
+        <div id="chat-aura"></div>
+    </section>
     <script src="./src/js/index.js"></script>
+    <!-- Script do tt-chat-n8n -->
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://sua-instancia-n8n/webhook/aura',
+            webhookConfig: { method: 'POST', headers: {} },
+            target: '#chat-aura',
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            defaultLanguage: 'pt',
+            initialMessages: [
+                'Olá! Eu sou Aura, sua assistente de IA. Pergunte algo sobre o currículo ou projetos de Daniel Antonio Matheus!',
+            ],
+            i18n: {
+                pt: {
+                    title: 'Converse com Aura',
+                    subtitle: 'Pergunte sobre meu currículo!',
+                    footer: 'Desenvolvido com n8n por Daniel',
+                    getStarted: 'Iniciar Conversa',
+                    inputPlaceholder: 'Digite sua pergunta...',
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
