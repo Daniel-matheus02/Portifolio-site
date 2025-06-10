@@ -152,48 +152,46 @@
                     </div>
                 </a>
             </div>
-            <div class="projeto">
-                <a href="https://github.com/Daniel-matheus02" alt="Projeto Arquearia">
-                    <img src="./src/images/proj/Tipos de arcos.jpg">
-                    <h4>Projeto Arquearia</h4>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito utilizando HTML, CSS e JavaScript.</p>
-                        <p>🔗 Ver no Github</p>
-                    </div>
-                </a>
-            </div>
         </div>
         <button class="btn-mostrar-projetos">Mostrar mais</button>
     </section>
-    <!-- Seção do Chat -->
-    <section class="chat" id="chat">
-        <h3>Converse com Aura</h3>
-        <p>Faça perguntas sobre meu currículo e projetos!</p>
-        <div id="chat-aura"></div>
-    </section>
+
     <script src="./src/js/index.js"></script>
     <!-- Script do tt-chat-n8n -->
-    <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/tt-chat-n8n/dist/chat.min.js';
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/style.css" rel="stylesheet" />
+<section class="chat" id="chat">
+    <h3>Converse com Aura</h3>
+    <p>Faça perguntas sobre meu currículo e projetos!</p>
+    <div id="n8n-chat" style="width: 100%; max-width: 400px; height: 600px; margin: 20px auto; border: 1px solid #ccc; border-radius: 8px;"></div>
+</section>
+<script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@0.27.1/dist/chat.bundle.es.js';
     createChat({
-        webhookUrl: 'https://daniel-matheus02.app.n8n.cloud/webhook/8c5818f2-18b0-4528-b864-c8fe07d1b14a',
-        webhookConfig: { method: 'POST', headers: {} },
-        target: '#chat-aura',
+        webhookUrl: 'https://daniel-matheus02.app.n8n.cloud/webhook/834d1f70-07fd-47a4-a041-d9c7f9106f88/chat', // Substitua pela Production URL do n8n
+        webhookConfig: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        },
+        target: '#n8n-chat',
         mode: 'window',
         chatInputKey: 'chatInput',
-        defaultLanguage: 'pt',
+        chatSessionKey: 'sessionId',
+        defaultLanguage: 'en', // 'pt' não é suportado, usaremos i18n para português
         initialMessages: [
-            'Olá! Eu sou Aura, sua assistente de IA. Pergunte algo sobre o currículo ou projetos de Daniel Antonio Matheus!',
+            'Olá! Eu sou Aura, sua assistente de IA. Pode me perguntar sobre o currículo ou projetos do Daniel! 🚀',
         ],
         i18n: {
-            pt: {
+            en: {
                 title: 'Converse com Aura',
-                subtitle: 'Pergunte sobre meu currículo!',
-                footer: 'Desenvolvido com n8n por Daniel',
+                subtitle: 'Pergunte sobre o currículo do Daniel!',
+                footer: 'Feito com n8n por Daniel Matheus',
                 getStarted: 'Iniciar Conversa',
                 inputPlaceholder: 'Digite sua pergunta...',
-            },
+            }
         },
+        showWelcomeScreen: false
     });
 </script>
 </body>
